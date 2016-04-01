@@ -3,6 +3,7 @@ package com.kjp.sampleapp;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.GridView;
@@ -11,7 +12,9 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 
-public class searchActivity extends AppCompatActivity {
+import java.util.HashMap;
+
+public class searchActivity extends AppCompatActivity implements BaseSliderView.OnSliderClickListener {
     Context mContext;
     GridView gridView;
     ImageListAdapter gridAdapter;
@@ -35,28 +38,35 @@ public class searchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         mContext = this;
 
+        HashMap<String,String> url_maps = new HashMap<String, String>();
+        url_maps.put("eaton", "http://i.imgur.com/v5atgRl.jpg");
+        url_maps.put("lawrence", "http://i.imgur.com/9FPlKfE.jpg");
+//        url_maps.put("House of Cards", "http://cdn3.nflximg.net/images/3093/2043093.jpg");
+//        url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
+
         gridView = (GridView) findViewById(R.id.usage_example_gridview);
         gridAdapter = new ImageListAdapter(mContext,eatFoodyImages);
 
         gridView.setAdapter(gridAdapter);
 
         sliderShow = (SliderLayout) findViewById(R.id.slider);
+        for(String name : url_maps.keySet()){
+            DefaultSliderView textSliderView = new DefaultSliderView(this);
+            // initialize a SliderLayout
+            textSliderView
+                    .image(url_maps.get(name))
+                    .setScaleType(BaseSliderView.ScaleType.Fit)
+                    .setOnSliderClickListener(this);
 
-        DefaultSliderView textSliderView = new DefaultSliderView(this);
+            //add your extra information
+            textSliderView.bundle(new Bundle());
+            textSliderView.getBundle()
+                    .putString("extra",name);
 
+            sliderShow.addSlider(textSliderView);
+        }
 
-        textSliderView.image( "http://i.imgur.com/vceTRaG.jpg")
-                .setScaleType(BaseSliderView.ScaleType.FitCenterCrop);
-
-        DefaultSliderView textSliderView1 = new DefaultSliderView(this);
-        textSliderView1.image("http://i.imgur.com/vRhi9mt.jpg").setScaleType(BaseSliderView.ScaleType.FitCenterCrop);
-
-
-        sliderShow.addSlider(textSliderView);
-        sliderShow.addSlider(textSliderView1);
-
-
-
+        sliderShow.stopAutoCycle();
     }
 
     @Override
@@ -79,4 +89,13 @@ public class searchActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onSliderClick(BaseSliderView slider) {
+       //Log.e("Search", "slider clicked");
+        String course_name = slider.getBundle().get("extra").toString();
+       // Toast.makeText(this, course_name + "", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(searchActivity.this, CourseActivity.class);
+        i.putExtra("dateName", course_name);
+        startActivity(i);
+    }
 }

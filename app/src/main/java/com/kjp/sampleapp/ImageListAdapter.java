@@ -36,7 +36,7 @@ public class ImageListAdapter extends ArrayAdapter {
                 .with(context)
                 .load(imageUrls[position])
                 .placeholder(R.drawable.rounded_bg)
-                .error(R.drawable.rocketship)
+                .error(R.drawable.roundedtopbackground)
                 .centerCrop()
                 .into((ImageView) convertView);
 

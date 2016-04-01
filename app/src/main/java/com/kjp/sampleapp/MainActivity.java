@@ -3,6 +3,7 @@ package com.kjp.sampleapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -41,15 +42,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            chineseBtn = (TextView)findViewById(R.id.chineseBtn);
-            chineseBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    selected_language = "chinese";
-                    //save chosen language
-                    saveChosenLanguage(selected_language);
-                }
-            });
+            TextView txt = (TextView) findViewById(R.id.custom_font);
+            Typeface font = Typeface.createFromAsset(getAssets(), "orange_juice.ttf");
+            txt.setTypeface(font);
 
         }else{
             Intent i = new Intent(MainActivity.this, searchActivity.class);

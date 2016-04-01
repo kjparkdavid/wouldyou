@@ -3,8 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffd1dc"
     tools:context="com.kjp.sampleapp.MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/main_background6"
+        android:scaleType="centerCrop"
+         />
 
     <LinearLayout
         android:id="@+id/app_name_layout"
@@ -12,20 +18,25 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="120dp"
         >
 
         <TextView
+            android:id="@+id/custom_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Would You"
+            android:typeface="monospace"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
             android:layout_gravity="center_vertical"
-            android:textSize="24sp"/>
+            android:textSize="42sp"/>
 
         <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/rocketship"/>
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/logo_ufo"/>
 
     </LinearLayout>
 
@@ -33,29 +44,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_centerInParent="true"
+        android:layout_below="@id/app_name_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
         >
 
         <TextView
             android:id="@+id/koreanBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Korean"
-            android:layout_marginBottom="15dp"
+            android:text="한국어"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="25dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/selectedroundtopbackground"
             android:textSize="24sp"/>
         <TextView
             android:id="@+id/englishBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="English"
-            android:layout_marginBottom="15dp"
+            android:textColor="#ffffff"
+             android:layout_gravity="center_horizontal"
+            android:background="@drawable/selectedroundtopbackground"
             android:textSize="24sp"/>
-        <TextView
-            android:id="@+id/chineseBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Chinese"
-            android:textSize="24sp"/>
+
     </LinearLayout>
 
 
