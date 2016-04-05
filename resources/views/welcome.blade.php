@@ -16,10 +16,10 @@
           <div class="row">
         		<div class="col-md-12">
               <div class="well" style="margin-bottom:40px;">
-                  <h1 class="intro" style="margin-bottom:0px;">SOFTWARE DEVELOPER</h1>
-                  <h3 class="subtitle">I make Android apps and Websites.</h3>
-                  <a href="mailto:kjparkdavid@gmail.com" target="_blank"><span class="btn btn-md btn-primary">Accepting Projects</span></a>
-                  <a href="/portfolio"><span class="btn btn-md btn-primary">View My Work</span></a>
+                  <h1 class="intro" style="margin-bottom:0px;">Would You</h1>
+                  <h3 class="subtitle">Websites</h3>
+                  <a href="mailto:kjparkdavid@gmail.com" target="_blank"><span class="btn btn-md btn-primary">Edit Page</span></a>
+                  <a href="/portfolio"><span class="btn btn-md btn-primary">Add Date Courses</span></a>
                 </div>
             </div>
           </div>
