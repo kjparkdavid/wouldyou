@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Route::get('/courses', function()
 {
-    return Test::all();
+    return Course::all();
 });
 
 Route::get('/main', 'MainController@index');

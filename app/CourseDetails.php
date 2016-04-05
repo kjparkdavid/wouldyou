@@ -4,6 +4,8 @@ class CourseDetails extends Eloquent {
 	/** Properties **/
 	protected $fillable = array('name','course_id','image','category');
 	public static $rules = array();
+
+	 protected $table = 'course_details';
 	/** Enable softDeleting **/
 	//use SoftDeletingTrait;
 	/**
