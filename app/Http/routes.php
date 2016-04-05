@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/users', function()
+
+Route::get('/courses', function()
 {
-    return User::all();
+    return Coures::all();
 });
