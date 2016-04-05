@@ -33,13 +33,8 @@ class MainController extends Controller {
 	 */
 	public function index()
 	{
-
-
 			 $courses = Course::all();
-
 			 return view('welcome', ['courses' => $courses]);
-
-
 	}
 	public function resume()
 	{

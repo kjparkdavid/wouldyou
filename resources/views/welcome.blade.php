@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>Would You</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
         <!-- Latest compiled and minified CSS -->
@@ -13,9 +13,14 @@
     </head>
     <body>
         <div class="container">
-            <div class="content">
+          <div class="row">
+        		<div class="col-md-12">
                 <div class="title">Main Page</div>
             </div>
+          </div>
+
+
+
         </div>
     </body>
 </html>
