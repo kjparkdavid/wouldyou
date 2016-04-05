@@ -11,21 +11,29 @@
         android:layout_height="45dp"
         android:background="#EA526F"
         android:id="@+id/headerLayout"
-        android:paddingLeft="15dp"
         android:descendantFocusability="beforeDescendants"
         android:focusableInTouchMode="true"
         >
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.1"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:src="@drawable/ic_search_black_24dp"/>
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="0.8"
             android:layout_height="match_parent"
             android:hint="Search"
             />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="0.1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_settings_black_24dp"/>
 
     </LinearLayout>
 
@@ -50,7 +58,7 @@
             android:layout_weight="0.4"
             />
     </LinearLayout>
-    
+
     <com.daimajia.slider.library.Indicators.PagerIndicator
         android:id="@+id/custom_indicator"
         android:layout_width="wrap_content"

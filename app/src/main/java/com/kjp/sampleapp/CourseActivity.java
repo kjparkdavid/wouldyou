@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -44,7 +45,7 @@ public class CourseActivity extends AppCompatActivity {
         //loop through the data
         for(Map.Entry<Integer, String> entry : course_map.entrySet()) {
             int key = entry.getKey();
-            String value = entry.getValue();
+            final String value = entry.getValue();
             counter++;
             //load course item layout
             LinearLayout newItem = (LinearLayout) inflater.inflate(R.layout.course_overview_item,null);
@@ -72,7 +73,15 @@ public class CourseActivity extends AppCompatActivity {
                     .error(R.drawable.roundedtopbackground)
                      .fitCenter()
                      .into(item_img);
-
+            item_img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(CourseActivity.this, CourseDetailActivity.class);
+                    i.putExtra("courseDetailName", value);
+                    i.putExtra("dateName", dateName);
+                    startActivity(i);
+                }
+            });
             //set text
             item_txt.setText(value);
             //add the layout to screen

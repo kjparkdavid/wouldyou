@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.kjp.sampleapp.CourseActivity">
+    tools:context="com.kjp.sampleapp.CourseDetailActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,13 +13,14 @@
         android:paddingLeft="15dp"
         android:descendantFocusability="beforeDescendants"
         android:focusableInTouchMode="true"
-
+        android:layout_marginBottom="15dp"
         >
 
         <TextView
+            android:id="@+id/headerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date Course"
+            android:text="Date Course Detail"
             android:textSize="24sp"
             android:textColor="#0E2B4B"
             android:layout_gravity="center"/>
@@ -36,11 +37,9 @@
             android:id="@+id/course_layout"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="15dp">
+            android:layout_height="match_parent">
 
         </LinearLayout>
     </ScrollView>
-
 
 </RelativeLayout>
