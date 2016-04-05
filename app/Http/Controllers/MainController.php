@@ -2,7 +2,8 @@
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\URL;
 use Input;
-use App\Footprint;
+use App\Course;
+use App\CourseDetails;
 use Session;
 use Mail;
 class MainController extends Controller {
