@@ -20,3 +20,5 @@ Route::get('/courses', function()
 {
     return Coures::all();
 });
+
+Route::get('/main', 'MainController@index');
