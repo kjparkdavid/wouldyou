@@ -1,5 +1,5 @@
-
-<?php
+<?php namespace App;
+use Illuminate\Database\Eloquent\Model;
 class CourseDetails extends Eloquent {
 	/** Properties **/
 	protected $fillable = array('name','course_id','image','category');
