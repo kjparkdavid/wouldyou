@@ -23,7 +23,7 @@
         		<div class="col-md-12">
               <div class="well" style="margin-bottom:40px;">
                   <h1 class="intro" style="margin-bottom:0px;">Would You</h1>
-                  <h3 class="subtitle">Websites</h3>
+                  <h3 class="subtitle">ADMIN PAGE</h3>
                   <a href="mailto:kjparkdavid@gmail.com" target="_blank"><span class="btn btn-md btn-primary">Edit Page</span></a>
                   <a href="/portfolio"><span class="btn btn-md btn-primary">Add Date Courses</span></a>
                 </div>
@@ -61,11 +61,7 @@
           {!! Form::text('image', null, array('class' => 'form-control', 'id' => 'image', 'placeholder' => "Image URL")) !!}
         </div>
       </div>
-      <div class = "form-group">
-        <div class = "col-sm-12">
-          {!! Form::text('category', null, array('class' => 'form-control', 'id' => 'name', 'placeholder' => "Category",'rows'=>'3','required')) !!}
-        </div>
-      </div>
+      
       {!! Form::submit('Post', array('class' => 'btn btn-success')) !!}
       {!! Form::close() !!}
     </div>
