@@ -19,3 +19,5 @@ Route::get('/courses', function()
 });
 
 Route::get('/', 'MainController@index');
+
+Route::post('/dateCourse/createDC', 'MainController@createDC');
