@@ -65,12 +65,12 @@ class MainController extends Controller {
 		$footprint = Footprint::all();
 		return view('footprint')->with('footprint',$footprint);
 	}
-	//when footprint form is submitted
-	public function createFP(){
+	//create DC with form
+	public function createDC(){
 		$data = Input::all();
-		$footprint = new Footprint($data);
-		$footprint->save();
-		return redirect('/footprint')->with('message', 'You have left your footprint!');
+		$course = new Course($data);
+		$course->save();
+		return redirect('/')->with('message', 'Course Saved!');
 	}
 
   //send email

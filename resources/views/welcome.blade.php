@@ -12,6 +12,12 @@
 
     </head>
     <body>
+      @if (Session::has('message'))
+    	<div class="alert alert-success alert-dismissable">
+    		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>{{ Session::get('message') }}
+    	</div>
+
+    @endif
         <div class="container">
           <div class="row">
         		<div class="col-md-12">
@@ -22,6 +28,50 @@
                   <a href="/portfolio"><span class="btn btn-md btn-primary">Add Date Courses</span></a>
                 </div>
             </div>
+
+
+            <div class="row">
+            		<div class="col-md-12 text-center">
+            		    <h3>Date Courses<h3>
+                    @foreach($courses as $f)
+                    <div class="col-md-4" style="text-align:left;">
+                      <h4 style ="color:red">{!! $f -> name !!}</h4>
+                      <div class="well footprint" style="text-align:left;">
+                        <h5>{!! $f -> image !!}</h5>
+                      <!--  <h6>- {{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $f->created_at)->format("M/d/Y") }}</h6>-->
+                      </div>
+                    </div>
+                    @endforeach
+
+            		</div>
+            </div>
+
+            <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+
+      {!! Form::open(array('action' => array('MainController@createDC'), 'method' => 'post', 'class' => 'form-horizontal','id' => 'course-creator','role' => 'form')) !!}
+      <div class = "form-group">
+        <div class = "col-sm-12">
+          {!! Form::text('name', null, array('class' => 'form-control', 'id' => 'name', 'placeholder' => "Name", 'required')) !!}
+        </div>
+      </div>
+      <div class ="form-group">
+        <div class = "col-sm-12">
+          {!! Form::text('image', null, array('class' => 'form-control', 'id' => 'image', 'placeholder' => "Image URL")) !!}
+        </div>
+      </div>
+      <div class = "form-group">
+        <div class = "col-sm-12">
+          {!! Form::text('category', null, array('class' => 'form-control', 'id' => 'name', 'placeholder' => "Category",'rows'=>'3','required')) !!}
+        </div>
+      </div>
+      {!! Form::submit('Post', array('class' => 'btn btn-success')) !!}
+      {!! Form::close() !!}
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+
           </div>
         </div>
     </body>

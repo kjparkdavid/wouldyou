@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 Route::get('/courses', function()
@@ -21,4 +18,4 @@ Route::get('/courses', function()
     return Course::all();
 });
 
-Route::get('/main', 'MainController@index');
+Route::get('/', 'MainController@index');
